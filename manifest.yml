@@ -1,0 +1,10 @@
+---
+applications:
+- name: websocket-demo
+  memory: 128M
+  path: .
+  buildpacks:
+  - binary_buildpack
+  routes:
+  - route: websocketd-demo.apps.pcfone.io
+  command: ./websocketd --port=${PORT:-443} --dir=. --devconsole
